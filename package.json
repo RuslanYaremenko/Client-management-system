@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "airbnb": "^0.0.2",
+    "bootstrap": "^4.4.0",
+    "classnames": "^2.2.6",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
