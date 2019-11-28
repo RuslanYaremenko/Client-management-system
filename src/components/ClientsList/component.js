@@ -31,12 +31,15 @@ const ClientsList = props => (
 );
 
 ClientsList.propTypes = {
-  clients: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  clients: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
+ClientsList.defaultProps = {
+  clients: [],
+};
 
 const mapStateToProps = state => ({
-  clients: state.clients,
+  clients: state.clientsReducer.clients,
 });
 
 export default connect(mapStateToProps)(ClientsList);
