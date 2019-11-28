@@ -1,4 +1,5 @@
 
+import axios from 'axios';
 import * as types from './types';
 
 export const changeFirstName = payload => ({
@@ -25,3 +26,11 @@ export const changeCardNumber = payload => ({
   type: types.CHANGE_CARD_NUMBER,
   payload,
 });
+
+export const setRandomData = payload => ({
+  type: types.SET_RANDOM_DATA,
+  payload,
+});
+
+export const receiveRandomDataThunk = () => dispatch => axios('https://meowfacts.herokuapp.com/')
+  .then(response => dispatch(setRandomData(response.data)));

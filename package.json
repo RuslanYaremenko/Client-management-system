@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "airbnb": "^0.0.2",
+    "axios": "^0.19.0",
     "bootstrap": "^4.4.0",
     "classnames": "^2.2.6",
     "eslint-config-airbnb": "17.1.0",

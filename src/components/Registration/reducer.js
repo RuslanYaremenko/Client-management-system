@@ -34,6 +34,12 @@ export default function formReducer(state = initialState.formReducer, action) {
         ...state,
         cardNumber: payload,
       };
+
+    case types.SET_RANDOM_DATA:
+      return {
+        ...state,
+        randomData: payload.data,
+      };
     default: {
       return state;
     }
