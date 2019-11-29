@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './component.module.scss';
 
 const ClientsList = props => (
-  <div className={`container ${styles.container}`}>
+  <div className={`jumbotron ${styles.container}`}>
     {props.clients.length > 0 ? (
       <>
         <ul className="list-group">

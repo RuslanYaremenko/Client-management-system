@@ -27,7 +27,7 @@ export const initialState = {
     firstName: '',
     lastName: '',
     sex: '',
-    loyaltyProgramm: '',
+    loyaltyProgramm: 'Unavailable',
     dateOfRegistration: 0,
   },
 };
