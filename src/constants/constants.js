@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   clientsReducer: {
     clients: [{
       firstName: 'Ivan',
@@ -16,7 +16,6 @@ const initialState = {
       dateOfRegistration: new Date(1574950642122),
     },
     {
-
       firstName: 'Fedya',
       lastName: 'Ivanov',
       sex: 'male',
@@ -33,4 +32,6 @@ const initialState = {
   },
 };
 
-export default initialState;
+export const REQUIRED_FIELD = 'This field is required';
+export const REQUIRED_RADIO = 'Sex must be chosen';
+export const INVALID_CARD_NUMBER = 'Invalid card number';

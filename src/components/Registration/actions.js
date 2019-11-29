@@ -32,5 +32,10 @@ export const setRandomData = payload => ({
   payload,
 });
 
+export const validation = payload => ({
+  type: types.VALIDATION,
+  payload,
+});
+
 export const receiveRandomDataThunk = () => dispatch => axios('https://meowfacts.herokuapp.com/')
   .then(response => dispatch(setRandomData(response.data)));

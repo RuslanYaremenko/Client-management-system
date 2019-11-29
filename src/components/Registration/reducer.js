@@ -1,5 +1,5 @@
 import * as types from './types';
-import initialState from '../../constants/initialState';
+import { initialState } from '../../constants/constants';
 
 export default function formReducer(state = initialState.formReducer, action) {
   const { type, payload } = action;
@@ -40,6 +40,14 @@ export default function formReducer(state = initialState.formReducer, action) {
         ...state,
         randomData: payload.data,
       };
+
+
+    case types.VALIDATION:
+      return {
+        ...state,
+        errors: payload,
+      };
+
     default: {
       return state;
     }

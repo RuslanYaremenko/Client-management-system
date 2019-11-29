@@ -1,5 +1,5 @@
 import * as types from './types';
-import initialState from '../../constants/initialState';
+import { initialState } from '../../constants/constants';
 
 export default function clientsReducer(state = initialState.clientsReducer, action) {
   const { type, payload } = action;
