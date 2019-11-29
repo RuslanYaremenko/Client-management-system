@@ -30,9 +30,7 @@ const Registration = (props) => {
             className={firstNameClass}
             id="exampleFormControlInput1"
             placeholder="First name"
-            onChange={(e) => {
-              props.changeFirstName(e.target.value);
-            }}
+            onChange={props.handleChangeFirstName}
           />
           { props.errors.firstName && (
           <div className={styles.invalidMessage}>
@@ -47,9 +45,7 @@ const Registration = (props) => {
             className={lastNameClass}
             id="exampleFormControlInput1"
             placeholder="Last name"
-            onChange={(e) => {
-              props.changeLastName(e.target.value);
-            }}
+            onChange={props.handleChangeLastName}
           />
           { props.errors.lastName && (
           <div className={styles.invalidMessage}>
@@ -67,9 +63,7 @@ const Registration = (props) => {
                 name="gridRadios"
                 id="gridRadios1"
                 value="male"
-                onChange={(e) => {
-                  props.changeSex(e.target.value);
-                }}
+                onChange={props.handleChangeSex}
               />
               <label className="form-check-label" htmlFor="gridRadios1">
            Male
@@ -82,9 +76,7 @@ const Registration = (props) => {
                 name="gridRadios"
                 id="gridRadios2"
                 value="female"
-                onChange={(e) => {
-                  props.changeSex(e.target.value);
-                }}
+                onChange={props.handleChangeSex}
               />
               <label className="form-check-label" htmlFor="gridRadios2">
             Female
@@ -102,9 +94,7 @@ const Registration = (props) => {
           <select
             className={loyaltyProgrammClass}
             id="exampleFormControlSelect1"
-            onChange={(e) => {
-              props.changeLoyaltyProgramm(e.target.value);
-            }}
+            onChange={props.handleChangeLoyalty}
             value={props.loyaltyProgramm}
           >
             <option value="Unavailable">Unavailable</option>
@@ -121,7 +111,7 @@ const Registration = (props) => {
         <div className="form-group">
           <input
             className={cardNumberClass}
-            onChange={e => props.changeCardNumber(e.target.value)}
+            onChange={props.handleChangeCardNumber}
             placeholder="1234 5678 9101 1121"
           />
           {props.errors.cardNumber && (
@@ -150,11 +140,11 @@ const Registration = (props) => {
 
 Registration.propTypes = {
   loyaltyProgramm: PropTypes.string.isRequired,
-  changeLoyaltyProgramm: PropTypes.func.isRequired,
-  changeLastName: PropTypes.func.isRequired,
-  changeSex: PropTypes.func.isRequired,
-  changeFirstName: PropTypes.func.isRequired,
-  changeCardNumber: PropTypes.func.isRequired,
+  handleChangeLoyalty: PropTypes.func.isRequired,
+  handleChangeLastName: PropTypes.func.isRequired,
+  handleChangeSex: PropTypes.func.isRequired,
+  handleChangeFirstName: PropTypes.func.isRequired,
+  handleChangeCardNumber: PropTypes.func.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
   sex: PropTypes.string.isRequired,

@@ -35,19 +35,41 @@ class RegistrationContainer extends Component {
 
     if (isEmpty(validationErrors)) {
       this.props.addNewClient(formValues);
-
       this.props.history.push('/clients');
     }
   }
 
+  handleChangeLoyalty=event => this.props.changeLoyaltyProgramm(event.target.value);
+
+  handleChangeSex= event => this.props.changeSex(event.target.value)
+
+  handleChangeLastName= event => this.props.changeLastName(event.target.value)
+
+  handleChangeFirstName= event => this.props.changeFirstName(event.target.value)
+
+  handleChangeCardNumber= event => this.props.changeCardNumber(event.target.value)
+
   render() {
     return (
-      <RegistrationComponent {...this.props} handleSubmit={this.handleSubmit} />
+      <RegistrationComponent
+        {...this.props}
+        handleSubmit={this.handleSubmit}
+        handleChangeLoyalty={this.handleChangeLoyalty}
+        handleChangeSex={this.handleChangeSex}
+        handleChangeFirstName={this.handleChangeFirstName}
+        handleChangeLastName={this.handleChangeLastName}
+        handleChangeCardNumber={this.handleChangeCardNumber}
+      />
     );
   }
 }
 RegistrationContainer.propTypes = {
   receiveRandomDataThunk: PropTypes.func.isRequired,
+  changeFirstName: PropTypes.func.isRequired,
+  changeLastName: PropTypes.func.isRequired,
+  changeCardNumber: PropTypes.func.isRequired,
+  changeSex: PropTypes.func.isRequired,
+  changeLoyaltyProgramm: PropTypes.func.isRequired,
   addNewClient: PropTypes.func.isRequired,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
