@@ -11,6 +11,8 @@ import {
   receiveRandomDataThunk,
 } from './actions';
 
+import { addNewClient } from '../ClientsList/actions';
+
 
 class RegistrationContainer extends Component {
   componentDidMount() {
@@ -31,6 +33,9 @@ const mapStateToProps = state => ({
   loyaltyProgramm: state.formReducer.loyaltyProgramm,
   cardNumber: state.formReducer.cardNumber,
   randomData: state.formReducer.randomData,
+  firstName: state.formReducer.firstName,
+  lastName: state.formReducer.lastName,
+  sex: state.formReducer.sex,
 });
 
 const mapDispatchToProps = {
@@ -40,6 +45,7 @@ const mapDispatchToProps = {
   changeSex,
   changeCardNumber,
   receiveRandomDataThunk,
+  addNewClient,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistrationContainer);

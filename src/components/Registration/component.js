@@ -81,9 +81,29 @@ const Registration = props => (
       </div>
       {props.loyaltyProgramm === 'Plastic card' && (
       <div className="form-group">
-        <input className="form-control" onChange={e => props.changeCardNumber(e.target.value)} />
+        <input
+          className="form-control"
+          onChange={e => props.changeCardNumber(e.target.value)}
+          placeholder="1234 5678 9101 1121"
+        />
       </div>
       ) }
+      <button
+        type="button"
+        className={`btn btn-outline-success ${styles.submit}`}
+        onClick={() => {
+          props.addNewClient({
+            firstName: props.firstName,
+            lastName: props.lastName,
+            sex: props.sex,
+            loyaltyProgramm: props.loyaltyProgramm,
+            cardNumber: props.cardNumber || '',
+          });
+          props.history.push('/clients');
+        }}
+      >
+        Submit
+      </button>
     </form>
     <div className={`container input-group ${styles.randomContainer}`}>
       <h3 className={styles.randomData}>Some facts about cats:</h3>
@@ -100,11 +120,18 @@ Registration.propTypes = {
   changeSex: PropTypes.func.isRequired,
   changeFirstName: PropTypes.func.isRequired,
   changeCardNumber: PropTypes.func.isRequired,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  sex: PropTypes.string.isRequired,
+  cardNumber: PropTypes.string,
   randomData: PropTypes.arrayOf(PropTypes.string),
+  addNewClient: PropTypes.func.isRequired,
+  history: PropTypes.shape({ push: PropTypes.func }).isRequired,
 };
 
 Registration.defaultProps = {
   randomData: [''],
+  cardNumber: '',
 };
 
 export default Registration;

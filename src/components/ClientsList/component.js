@@ -9,10 +9,10 @@ const ClientsList = props => (
     {props.clients.length > 0 ? (
       <>
         <ul className="list-group">
-          {props.clients.map(({ name, dateOfRegistration }) => (
+          {props.clients.map(({ firstName, lastName, dateOfRegistration }) => (
             <li className="card" key={dateOfRegistration}>
               <div className="card-body">
-                <h5 className="card-title">{name}</h5>
+                <h5 className="card-title">{`${firstName} ${lastName}`}</h5>
                 <h6 className="card-subtitle mb-2 text-muted">{dateOfRegistration.toLocaleDateString()}</h6>
               </div>
             </li>

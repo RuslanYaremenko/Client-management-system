@@ -1,15 +1,26 @@
 const initialState = {
   clientsReducer: {
     clients: [{
-      name: 'Ivan Ivanov',
+      firstName: 'Ivan',
+      lastName: 'Ivanov',
+      sex: 'male',
+      loyaltyProgramm: 'unavailable',
       dateOfRegistration: new Date(1574950641124),
     },
     {
-      name: 'Vasya Ivanov',
+      firstName: 'Vasya',
+      lastName: 'Ivanov',
+      sex: 'male',
+      loyaltyProgramm: 'plastic card',
+      cardNumber: '1234 5678 9101 1121',
       dateOfRegistration: new Date(1574950642122),
     },
     {
-      name: 'Fedya Ivanov',
+
+      firstName: 'Fedya',
+      lastName: 'Ivanov',
+      sex: 'male',
+      loyaltyProgramm: 'unavailable',
       dateOfRegistration: new Date(1574950541122),
     }],
   },
@@ -18,7 +29,7 @@ const initialState = {
     lastName: '',
     sex: '',
     loyaltyProgramm: '',
-    date: 0,
+    dateOfRegistration: 0,
   },
 };
 
