@@ -21,7 +21,7 @@ const Registration = (props) => {
   });
 
   return (
-    <>
+    <div className="jumbotron">
       <form className="container">
         <div className="form-group">
           <label htmlFor="exampleFormControlInput1">First name</label>
@@ -33,9 +33,9 @@ const Registration = (props) => {
             onChange={props.handleChangeFirstName}
           />
           { props.errors.firstName && (
-          <div className={styles.invalidMessage}>
-            {props.errors.firstName}
-          </div>
+            <div className={styles.invalidMessage}>
+              {props.errors.firstName}
+            </div>
           )}
         </div>
         <div className="form-group">
@@ -48,9 +48,9 @@ const Registration = (props) => {
             onChange={props.handleChangeLastName}
           />
           { props.errors.lastName && (
-          <div className={styles.invalidMessage}>
-            {props.errors.lastName}
-          </div>
+            <div className={styles.invalidMessage}>
+              {props.errors.lastName}
+            </div>
           )}
         </div>
         <div className="form-group">
@@ -83,9 +83,9 @@ const Registration = (props) => {
               </label>
             </div>
             { props.errors.sex && (
-            <div className={styles.invalidMessage}>
-              {props.errors.sex}
-            </div>
+              <div className={styles.invalidMessage}>
+                {props.errors.sex}
+              </div>
             )}
           </div>
         </div>
@@ -102,24 +102,24 @@ const Registration = (props) => {
             <option value="Mobile app">Mobile app</option>
           </select>
           { props.errors.loyaltyProgramm && (
-          <div className={styles.invalidMessage}>
-            {props.errors.loyaltyProgramm}
-          </div>
+            <div className={styles.invalidMessage}>
+              {props.errors.loyaltyProgramm}
+            </div>
           )}
         </div>
         {props.loyaltyProgramm === 'Plastic card' && (
-        <div className="form-group">
-          <input
-            className={cardNumberClass}
-            onChange={props.handleChangeCardNumber}
-            placeholder="1234 5678 9101 1121"
-          />
-          {props.errors.cardNumber && (
-          <div className={styles.invalidMessage}>
-            {props.errors.cardNumber}
+          <div className="form-group">
+            <input
+              className={cardNumberClass}
+              onChange={props.handleChangeCardNumber}
+              placeholder="1234 5678 9101 1121"
+            />
+            {props.errors.cardNumber && (
+            <div className={styles.invalidMessage}>
+              {props.errors.cardNumber}
+            </div>
+            )}
           </div>
-          )}
-        </div>
         ) }
         <button
           type="button"
@@ -133,8 +133,7 @@ const Registration = (props) => {
         <h3 className={styles.randomData}>Some facts about cats:</h3>
         <p className={styles.randomData}>{props.randomData}</p>
       </div>
-
-    </>
+    </div>
   );
 };
 
