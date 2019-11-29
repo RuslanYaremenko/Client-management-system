@@ -1,0 +1,21 @@
+.randomInfo{
+  display: block;
+}
+
+.randomContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.submit{
+    float: right;
+}
+
+.invalidField{
+   border: 1px solid rgb(255, 125, 125) ;
+}
+
+.invalidMessage{
+   color: rgb(255, 125, 125);
+   font-size: 14px;
+}
